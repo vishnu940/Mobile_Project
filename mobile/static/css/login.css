@@ -1,0 +1,28 @@
+body{
+background-color:#e6e6e6;
+background: url('/static/images/bg2.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+.main{
+height:400px;
+position:relative;
+top:100px;
+left:10%;
+color:#e5ddd5;
+background-color:#666
+
+}
+.btn{
+width:90%;
+position:relative;
+left:2%;
+}
+h1{
+text-align:center;
+}
+.m2{
+position:relative;
+top:20px;
+}
