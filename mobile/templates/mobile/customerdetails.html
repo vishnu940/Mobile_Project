@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%extends 'mobile/base.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-dark table-hover">
+                <tr>
+                    <td>Customer Name</td>
+                    <td>Customer Address</td>
+                    <td>Order status</td>
+                </tr>
+                {%for detail in users%}
+                <tr>
+                    <td>{{detail.user}}</td>
+                    <td>{{detail.address}}</td>
+                    <td>{{detail.status}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

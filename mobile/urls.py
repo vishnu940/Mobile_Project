@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from .views import index_page,list_mobile,user_register,user_login,index_page2,create_product,mobile_detail,product_details\
     ,update_mobile,delete_mobile,product_view,user_logout,order_product,add_to_cart,my_cart,remove_order,account_details,\
-    view_orders,cancel_order
+    view_orders,cancel_order,first_page,order_details,customer_details
 urlpatterns = [
-    path("",index_page,name="index"),
+    path("",first_page,name="main"),
+    path("index",index_page,name="index"),
     path("listmobile",list_mobile,name="list"),
     path('register',user_register,name="user_register"),
     path('login',user_login,name="user_login"),
@@ -38,6 +39,6 @@ urlpatterns = [
     path("accounts",account_details,name="ac"),
     path("vieworders",view_orders,name="view_order"),
     path("ordercancelled/<int:id>",cancel_order,name="cancel"),
-
-
+    path("orderdetails",order_details,name="order_detail"),
+    path("customerdetails",customer_details,name="customer")
 ]

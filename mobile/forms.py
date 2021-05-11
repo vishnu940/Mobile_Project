@@ -31,6 +31,11 @@ class order_form(ModelForm):
     class Meta:
         model=Order
         fields=["address","product","user"]
+        widgets={
+            "address":forms.TextInput(attrs={"class":"form-control"}),
+            "product":forms.Select(attrs={"class":"form-control"}),
+            "user":forms.TextInput(attrs={"class":"form-control"})
+        }
 
 class cart_form(ModelForm):
     class Meta:

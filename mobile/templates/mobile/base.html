@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Mobile app</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{%static 'assets/favicon.ico'%}" />
@@ -21,9 +23,9 @@
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action bg-info m2" href="{%url 'index'%}">Home</a>
                     <a class="list-group-item list-group-item-action bg-info m2" href="{%url 'add_product'%}">Add Products</a>
-                    <a class="list-group-item list-group-item-action bg-info m2" href="#">Customer Details</a>
+                    <a class="list-group-item list-group-item-action bg-info m2" href="{%url 'order_detail'%}">Order Details</a>
                     <a class="list-group-item list-group-item-action bg-info m2" href="{%url 'product_detail'%}">Product Details</a>
-                    <a class="list-group-item list-group-item-action bg-info m2" href="#!">Order Details</a>
+                    <a class="list-group-item list-group-item-action bg-info m2" href="{%url 'customer'%}">Customer Details</a>
                     <a class="list-group-item list-group-item-action bg-info m2" href="#!">Profile</a>
                 </div>
             </div>
@@ -40,6 +42,7 @@
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
+
                             <li class="nav-item"><a class="nav-link" href="{%url 'user_logout'%}">Logout</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#!" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -55,6 +58,7 @@
                 </nav>
                 <div class="container-fluid">
                     {% block body_block %}
+                    <h2>Welcome {{request.user}}</h2>
                     {% endblock %}
                 </div>
             </div>

@@ -108,7 +108,7 @@ def product_view(request,id):
 @login_required
 def user_logout(request):
     logout(request)
-    return redirect("user_login")
+    return redirect("main")
 @login_required
 def order_product(request,id):
     cart_view=cart.objects.get(id=id)
@@ -172,3 +172,22 @@ def cancel_order(request,id):
     order.status='Order Cancelled'
     order.save()
     return redirect("view_order")
+
+def first_page(request):
+    mobile=Product.objects.all()
+    context={}
+    context["mobile"]=mobile
+    return render(request,"mobile/firstpage.html",context)
+
+@admin_only
+def order_details(request):
+    orders=Order.objects.all()
+    context={}
+    context["orders"]=orders
+    return render(request,"mobile/orderdetails.html",context)
+@admin_only
+def customer_details(request):
+    users=Order.objects.all()
+    context={}
+    context["users"]=users
+    return render(request,"mobile/customerdetails.html",context)
