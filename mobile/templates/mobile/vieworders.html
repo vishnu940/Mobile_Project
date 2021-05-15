@@ -15,7 +15,9 @@
                     <td>{{order.product}}</td>
                     <td>{{order.product.price}}</td>
                     <td>{{order.status}}</td>
+                    {%if not order.status == 'Order Cancelled'%}
                     <td><a href="{%url 'cancel' order.id%}" class="btn btn-outline-warning">Cancel Order</a></td>
+                    {%endif%}
                 </tr>
                 {%endfor%}
             </table>

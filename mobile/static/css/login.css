@@ -1,6 +1,6 @@
 body{
-background-color:#e6e6e6;
-background: url('/static/images/mob2.jpg');
+background-color:#FFF;
+background: url('/static/images/gad.jpg');
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: 100% 100%;
@@ -24,7 +24,4 @@ text-align:center;
 .m2{
 position:relative;
 top:20px;
-}
-.hds{
-color:#f7f7f7;
 }

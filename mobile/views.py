@@ -119,13 +119,20 @@ def order_product(request,id):
         form=order_form(request.POST)
         if form.is_valid():
             form.save()
+            remove_order(request,id)
             return redirect("list")
         else:
-            form = order_form(request.POST)
+            form = order_form()
             context = {}
             context["form"] = form
             return render(request, "mobile/orderproduct.html", context)
     return render(request,"mobile/orderproduct.html",context)
+
+@login_required
+def remove_order(request,id):
+    cart_item=cart.objects.get(id=id)
+    cart_item.delete()
+    return redirect("my_cart")
 
 @login_required
 def add_to_cart(request,id):
@@ -137,9 +144,9 @@ def add_to_cart(request,id):
         form=cart_form(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("list")
+            return redirect("my_cart")
         else:
-            form = cart_form(request.POST)
+            form = cart_form()
             context = {}
             context["form"] = form
             return render(request, "mobile/cartadd.html",context)
@@ -151,11 +158,6 @@ def my_cart(request):
     context={}
     context["cart_item"]=cart_item
     return render(request,"mobile/mycart.html",context)
-@login_required
-def remove_order(request,id):
-    cart_item=cart.objects.get(id=id)
-    cart_item.delete()
-    return redirect("my_cart")
 
 @login_required
 def account_details(request):

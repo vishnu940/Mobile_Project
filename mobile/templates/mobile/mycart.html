@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {%extends 'mobile/base2.html'%}
 {%block body_block%}
+{%if cart_item%}
 <div class="container">
     <div class="row">
         {%for cart in cart_item%}
@@ -37,5 +38,8 @@
         </div>
         {%endfor%}
     </div>
+    {%else%}
+    <br><br><h4 style="text-align:center">Cart Empty</h4>
+    {%endif%}
 </div>
 {%endblock%}

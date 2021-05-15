@@ -26,9 +26,7 @@
             <a class="list-group-item list-group-item-action bg-dark m2" href="{%url 'list'%}">List Mobiles</a>
             <a class="list-group-item list-group-item-action bg-dark m2" href="{%url 'my_cart'%}">My Cart</a>
             <a class="list-group-item list-group-item-action bg-dark m2" href="{%url 'view_order'%}">My Orders</a>
-            <a class="list-group-item list-group-item-action bg-dark m2" href="#!">Events</a>
             <a class="list-group-item list-group-item-action bg-dark m2" href="{%url 'ac'%}">My Account</a>
-            <a class="list-group-item list-group-item-action bg-dark m2" href="#!">Status</a>
         </div>
     </div>
     <!-- Page Content-->
@@ -47,12 +45,12 @@
                     <li class="nav-item"><a class="nav-link" href="{%url 'my_cart'%}"><i style="font-size:24px" class="fa">&#xf07a;</i></a></li>
                     <li class="nav-item"><a class="nav-link" href="{%url 'user_logout'%}">Logout</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#!" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#!" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#!">Action</a>
-                            <a class="dropdown-item" href="#!">Another action</a>
+                            <a class="dropdown-item" href="{%url 'view_order'%}">My Orders</a>
+                            <a class="dropdown-item" href="{%url 'ac'%}">My Profile</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#!">Something else here</a>
+                            <a class="dropdown-item" href="{%url 'user_logout'%}">Logout</a>
                         </div>
                     </li>
                 </ul>
